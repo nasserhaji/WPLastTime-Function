@@ -100,14 +100,14 @@ var version_number = $('link[rel="stylesheet"][href*="style.css"]').attr('href')
 
 ```
 This line of code extracts the current version number of the stylesheet from the href attribute of the link element that has a rel attribute equal to "stylesheet" and a href attribute that contains the string "style.css". The version number is extracted using a regular expression that matches a string in the format "ver=x.x.x" and captures the last component (i.e. the third number) of the version number.
-```javascript
+```php
 var new_version_number = parseInt(version_number) + 1;
 
 ```
 This line of code increments the last component of the version number by 1, converting it to an integer first using parseInt().
 
 
-```javascript
+```php
 var new_stylesheet_url = $('link[rel="stylesheet"][href*="style.css"]').attr('href').replace(/ver=\d+\.\d+\.(\d+)/, 'ver=' + new_version_number + '.$1');
 
 ```
