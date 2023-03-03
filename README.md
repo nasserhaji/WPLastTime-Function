@@ -9,7 +9,7 @@ The function is then hooked to the wp_footer event using the add_action() functi
 Finally, the date displayed is centered using CSS.
 
 With this code, each time a post is updated on the WordPress website, the date of the update is displayed in the footer section of the website.
-
+```php
 /**
  * Returns the last modified date of a WordPress post or page.
  *
@@ -21,6 +21,7 @@ function get_last_modified_date( $format = 'F j, Y' ) {
     $modified_date = get_the_modified_time( $format, $post_id );
     return $modified_date;
 }
+```
 ```php
 /**
  * Displays the last modified date of a WordPress post or page.
@@ -31,7 +32,7 @@ function display_last_modified_date( $format = 'F j, Y' ) {
     $modified_date = get_last_modified_date( $format );
     echo 'Last updated: ' . $modified_date;
 }
-
+```
 ## Usage
 Copy the code to the functions.php file of your WordPress theme.
 Customize the date format to fit your needs (by default it's F j, Y, g:i a).
@@ -99,14 +100,14 @@ var version_number = $('link[rel="stylesheet"][href*="style.css"]').attr('href')
 
 ```
 This line of code extracts the current version number of the stylesheet from the href attribute of the link element that has a rel attribute equal to "stylesheet" and a href attribute that contains the string "style.css". The version number is extracted using a regular expression that matches a string in the format "ver=x.x.x" and captures the last component (i.e. the third number) of the version number.
-```php
+```javascript
 var new_version_number = parseInt(version_number) + 1;
 
 ```
 This line of code increments the last component of the version number by 1, converting it to an integer first using parseInt().
 
 
-```php
+```javascript
 var new_stylesheet_url = $('link[rel="stylesheet"][href*="style.css"]').attr('href').replace(/ver=\d+\.\d+\.(\d+)/, 'ver=' + new_version_number + '.$1');
 
 ```
